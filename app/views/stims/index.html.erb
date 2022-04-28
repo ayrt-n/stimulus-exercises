@@ -1,0 +1,75 @@
+<h2>Stimulus examples</h2>
+
+<h3>Connected to the hello_controller.js</h3>
+<div data-controller="hello"></div>
+
+<br><br>
+
+<h3>Connected to the toggle_controller.js</h3>
+<h4>Clicking the button will show/hide another element</h4>
+<div data-controller="toggle"
+     data-toggle-change-class="hidden">
+  <h1 data-toggle-target="toggleElement">🙉</h1>
+  <button data-action="toggle#toggleClass">Toggle</button>
+</div>
+
+<br>
+
+<h4>Clicking an element will hide the clicked element and show another</h4>
+<div data-controller="toggle"
+     data-toggle-change-class="hidden">
+  <h1 data-toggle-target="toggleElement" data-action="click->toggle#toggleClass">🌞</h1>
+  <h1 data-toggle-target="toggleElement" data-action="click->toggle#toggleClass" class="hidden">🌝</h1>
+</div>
+
+<h4>Clicking an element will highlight the element containing the checkbox</h4>
+<div>
+  <div data-controller="toggle"
+       data-toggle-change-class="highlight"
+       data-toggle-target="toggleElement">
+    <input type="checkbox" id="cb1" data-action="click->toggle#toggleClass">
+    <label for="cb1">Highlightable!</label></br>
+  </div>
+  <div data-controller="toggle"
+       data-toggle-change-class="highlight"
+       data-toggle-target="toggleElement">
+    <input type="checkbox" id="cb2" data-action="click->toggle#toggleClass">
+    <label for="cb2">Highlight me!</label></br>
+  </div>
+  <div data-controller="toggle"
+       data-toggle-change-class="highlight"
+       data-toggle-target="toggleElement">
+    <input type="checkbox" id="cb3" data-action="click->toggle#toggleClass">
+    <label for="cb3">No, highlight me!</label></br>
+  </div>
+  <div data-controller="toggle"
+       data-toggle-change-class="highlight"
+       data-toggle-target="toggleElement">
+    <input type="checkbox" id="cb4" data-action="click->toggle#toggleClass">
+    <label for="cb4">Whatever</label></br>
+  </div>
+</div>
+
+<br><br>
+
+<h3>Connected to text_controller.js</h3>
+<h4>Controller will warn user when they are close to or over the maximum character count (set to 90% of max)</h4>
+<h4>The controller was built to work with varying character limits, set using data attributes</h4>
+<div data-controller="text"
+     data-text-char-limit-value=10>
+  <p>Example (char limit: 10):</p>
+  <p class="warning" data-text-target="warning"></p>
+  <textarea data-text-target="textArea" data-action="text#checkLimit"></textarea>
+</div>
+<div data-controller="text"
+     data-text-char-limit-value=20>
+  <p>Example (char limit: 20):</p>
+  <p class="warning" data-text-target="warning"></p>
+  <textarea data-text-target="textArea" data-action="text#checkLimit"></textarea>
+</div>
+<div data-controller="text"
+     data-text-char-limit-value=50>
+  <p>Example (char limit: 50):</p>
+  <p class="warning" data-text-target="warning"></p>
+  <textarea data-text-target="textArea" data-action="text#checkLimit"></textarea>
+</div>
